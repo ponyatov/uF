@@ -1,5 +1,5 @@
-HW ?= pc
-# HW ?= f429disco
+# HW ?= pc
+HW ?= f429disco
 # HW ?= pi800
 
 ELF = $(BIN)/$(BINFILE).elf
@@ -17,3 +17,7 @@ elf: $(ELF)
 dfu: $(DFU)
 $(DFU): $(ELF)
 	~/elf2dfuse/bin/elf2dfuse $< $@
+
+.PHONY: qemu
+qemu: $(ELF)
+	$(QEMU) $(QEMU_CFG) -S -kernel $<

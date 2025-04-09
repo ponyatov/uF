@@ -2,6 +2,21 @@
     "version": 6,
     "buildPresets": [
         {
+            "name"            :  "pillF103",
+            "configurePreset" :  "pillF103",
+            "targets"         : ["all","install"]
+        },
+        {
+            "name"            :  "iskra",
+            "configurePreset" :  "iskra",
+            "targets"         : ["all","install"]
+        },
+        {
+            "name"            :  "f429disco",
+            "configurePreset" :  "f429disco",
+            "targets"         : ["all","install"]
+        },
+        {
             "name"            :  "linux",
             "configurePreset" :  "linux",
             "targets"         : ["all","install"]
@@ -19,6 +34,55 @@
                 "CMAKE_COLOR_DIAGNOSTICS" :  false,
                 "CMAKE_BUILD_TYPE"        : "Debug",
                 "CMAKE_VERBOSE_MAKEFILE"  :  false
+            }
+        },
+        {
+            "name"            : "cortexM",
+            "inherits"        : "common",
+            "hidden"          :  true,
+            "toolchainFile"   : "${sourceDir}/cmake/arm-none-eabi.cmake",
+            "cacheVariables"  : {
+                "OS":"bare"
+            }
+        },
+        {
+            "name"            :  "cortexM0",
+            "hidden"          :   true,
+            "inherits"        :  "cortexM",
+            "cacheVariables"  : {"ARCH":"cortexM0"}
+        },
+        {
+            "name"            :  "cortexM3",
+            "hidden"          :   true,
+            "inherits"        :  "cortexM",
+            "cacheVariables"  : {"ARCH":"cortexM3"}
+        },
+        {
+            "name"            : "cortexM4",
+            "inherits"        : "cortexM",
+            "hidden"          :  true,
+            "cacheVariables"  : {"ARCH":"cortexM4"}
+        },
+        {
+            "name"            :  "pillF103",
+            "inherits"        :  "cortexM3",
+            "cacheVariables"  : {"HW" :"pillF103",
+                                 "CPU":"stm32f103c8t", "SERIES": "STM32F1"}
+        },
+        {
+            "name"            : "iskra",
+            "inherits"        : "cortexM4",
+            "cacheVariables"  : {
+                "HW" :"iskra",
+                "CPU":"stm32f405rgt", "SERIES": "STM32F4"
+            }
+        },
+        {
+            "name"            : "f429disco",
+            "inherits"        : "cortexM4",
+            "cacheVariables"  : {
+                "HW" :"f429disco",
+                "CPU":"stm32f429zit", "SERIES": "STM32F4"
             }
         },
         {
