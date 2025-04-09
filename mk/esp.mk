@@ -14,3 +14,6 @@ $(ESP)/ESP8266_RTOS_SDK/README.md: $(DISTR)/ESP/$(RTOS8266_GZ)
 	unzip -d $(ESP) $< && touch $@
 $(DISTR)/ESP/$(RTOS8266_GZ):
 	$(CURL) $@ $(RTOS8266_URL)/$(RTOS8266_GZ)
+
+$(ESP)/esptool/esptool.py:
+	$(GITREF) https://github.com/espressif/esptool $(dir $@)
