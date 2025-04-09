@@ -11,9 +11,8 @@ d {s}?{n}+
 e [eE]{d}
 
 %%
-#.*                 {}                  // drop line comments
-[ \t\r\n]+          {}                  // drop spaces
-{d}{e}              TOKEN(f,atof,NUM)   // floating point number
-{d}\.{n}+({e})?     TOKEN(f,atof,NUM)   // floating point number
-{d}                 TOKEN(n,atoi,INT)   // integer number
-.                   {yyerror("");}      // any undetected char
+#.*                     {}                  // drop line comments
+[ \t\r\n]+              {}                  // drop spaces
+{d}                     TOKEN(n,atoi,INT)   // integer number
+[_a-zA-Z][_a-zA-Z0-9]*  TOKEN(s,,ID)
+.                       {yyerror("");}      // any undetected char
