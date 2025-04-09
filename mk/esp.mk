@@ -11,6 +11,6 @@ RTOS8266_GZ  = $(RTOS8266).zip
 RTOS8266_URL = https://github.com/espressif/ESP8266_RTOS_SDK/releases/download/v$(RTOS8266_VER)
 
 $(ESP)/ESP8266_RTOS_SDK/README.md: $(DISTR)/ESP/$(RTOS8266_GZ)
-	unzip -d $(dir $@) $< && touch $@
+	unzip -d $(dir $(dir $@)) $< && touch $@
 $(DISTR)/ESP/$(RTOS8266_GZ):
 	$(CURL) $@ $(RTOS8266_URL)/$(RTOS8266_GZ)
