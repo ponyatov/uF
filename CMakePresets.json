@@ -2,6 +2,11 @@
     "version": 6,
     "buildPresets": [
         {
+            "name"            :  "esp8266",
+            "configurePreset" :  "esp8266",
+            "targets"         : ["all","install"]
+        },
+        {
             "name"            :  "pillF103",
             "configurePreset" :  "pillF103",
             "targets"         : ["all","install"]
@@ -37,13 +42,23 @@
             }
         },
         {
+            "name"            : "xtensa",
+            "inherits"        : "common",
+            "hidden"          :  true,
+            "toolchainFile"   : "${sourceDir}/cmake/xtensa-lx106-elf.cmake",
+            "cacheVariables"  : {"ARCH":"xtensa", "OS":"bare"}
+        },
+        {
+            "name"            :  "esp8266",
+            "inherits"        :  "xtensa",
+            "cacheVariables"  : {"HW" :"esp8266", "CPU":"lx106"}
+        },
+        {
             "name"            : "cortexM",
             "inherits"        : "common",
             "hidden"          :  true,
             "toolchainFile"   : "${sourceDir}/cmake/arm-none-eabi.cmake",
-            "cacheVariables"  : {
-                "OS":"bare"
-            }
+            "cacheVariables"  : {"OS":"bare"}
         },
         {
             "name"            :  "cortexM0",
