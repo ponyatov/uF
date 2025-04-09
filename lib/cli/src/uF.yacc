@@ -12,7 +12,7 @@
 %%
 syntax: | syntax ex   
 
-ex: CHAR    { fprintf(stderr,"char:%c\n",$1); }
-  | STR     { fprintf(stderr, "str:%s\n",$1); }
-  | ID      { fprintf(stderr,  "id:%s\n",$1); }
-  | INT     { fprintf(stderr, "int:%i\n",$1); }
+ex: CHAR    { fprintf(stderr,"\tchar:%c\n",$1); }
+  | STR     { fprintf(stderr, "\tstr:%s\n",$1); }
+  | ID      { fprintf(stderr,  "\tid:%s\n",$1); }
+  | INT     { fprintf(stderr, "\tint:%i\n",$1); }

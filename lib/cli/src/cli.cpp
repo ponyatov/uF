@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "cli.hpp"
 
-void yyerror(char *msg) {
+__attribute__((weak)) void yyerror(char *msg) {
     fprintf(stderr, "\n\n%s:%i %s [%s]\n\n", yyfile, yylineno, msg, yytext);
     exit(-1);
 }
