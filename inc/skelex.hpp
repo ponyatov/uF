@@ -1,15 +1,6 @@
-/// @defgroup libc libc
-/// @{
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-/// @}
+#pragma once
 
-/// @defgroup main main
-/// @{
-extern int main(int argc, char *argv[]);
-extern void arg(char argc, char *argv);
-/// @}
+#include <stdio.h>
 
 /// @defgroup skelex skelex
 /// @{
