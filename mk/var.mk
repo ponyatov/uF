@@ -8,8 +8,6 @@ BINFILE = $(MODULE)_$(HW)_$(BRANCH)_$(NOW)
 
 ifeq ($(OS),Windows_NT)
 	HOST = $(shell uname -o)
-	EXE  = .exe
 else
 	HOST = $(shell lsb_release -si)
-	EXE  =
 endif
