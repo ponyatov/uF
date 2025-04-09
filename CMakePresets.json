@@ -46,12 +46,12 @@
             "inherits"        : "common",
             "hidden"          :  true,
             "toolchainFile"   : "${sourceDir}/cmake/xtensa-lx106-elf.cmake",
-            "cacheVariables"  : {"ARCH":"xtensa", "OS":"bare"}
+            "cacheVariables"  : {"ARCH":"xtensa"}
         },
         {
             "name"            :  "esp8266",
             "inherits"        :  "xtensa",
-            "cacheVariables"  : {"HW" :"esp8266", "CPU":"lx106"}
+            "cacheVariables"  : {"HW" :"esp8266", "CPU":"lx106", "OS":"rtos8266"}
         },
         {
             "name"            : "cortexM",

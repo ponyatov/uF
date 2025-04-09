@@ -2,12 +2,16 @@
     #include "uF.hpp"
 %}
 
-%defines %union { Object *o; }
+%defines %union { char c; char *s; int n; float f; }
 
-%token<o> INT
-%type<o> ex
+%token<c> CHAR
+%token<s> STR
+%token<n> INT
+%token<f> NUM
+%type ex
 
 %%
 syntax: | syntax ex   
 
-ex: INT { $1->dump(); }
+ex: INT { fprintf(stderr,"int:%i\n",$1); }
+  | NUM { fprintf(stderr,"num:%f\n",$1); }

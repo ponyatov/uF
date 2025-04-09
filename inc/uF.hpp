@@ -11,24 +11,6 @@ extern int main(int argc, char *argv[]);
 extern void arg(char argc, char *argv);
 /// @}
 
-/// @defgroup core core
-/// @brief object graph core
-
-/// @ingroup core
-/// @brief root object class
-class Object {
-    Object();
-    virtual ~Object();
-
-   public:
-    virtual void dump();
-};
-
-/// @defgroup prim prim
-/// @ingroup core
-
-class Prim : public Object {};
-
 /// @defgroup skelex skelex
 /// @{
 
@@ -40,5 +22,10 @@ extern FILE *yyin;               ///< current file handler
 extern int yyparse();            ///< parser
 extern void yyerror(char *msg);  ///< error callback
 #include "uF.yacc.hpp"
+#define TOKEN(Y, C, X)        \
+    {                         \
+        yylval.Y = C(yytext); \
+        return X;             \
+    }
 
 /// @}
