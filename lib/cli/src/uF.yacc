@@ -11,13 +11,13 @@
 %type ex
 
 %%
-syntax: | syntax ex   
+syntax : | syntax ex
 
-ex: CHAR    { fprintf(stderr,"\tchar:%c\n",$1); }
-  | STR     { fprintf(stderr, "\tstr:%s\n",$1); }
-  | ID      { fprintf(stderr,  "\tid:%s\n",$1); }
-  | INT     { fprintf(stderr, "\tint:%i\n",$1); }
-  | HEX     { fprintf(stderr, "\thex:%x\n",$1); }
-  | OCT     { fprintf(stderr, "\toct:%o\n",$1); }
-  | BIN     { fprintf(stderr, "\tbin:%i\n",$1); }
-  | NUM     { fprintf(stderr, "\tnum:%e\n",$1); }
+ex : CHAR   { fprintf(stderr,"\tchar:%c\n",$1); }
+   | STR    { fprintf(stderr, "\tstr:%s\n",$1); }
+   | ID     { fprintf(stderr,  "\tid:%s\n",$1); }
+   | INT    { fprintf(stderr, "\tint:%i\n",$1); }
+   | HEX    { fprintf(stderr, "\thex:%x\n",$1); }
+   | OCT    { fprintf(stderr, "\toct:%o\n",$1); }
+   | BIN    { fprintf(stderr, "\tbin:%i\n",$1); }
+   | NUM    { fprintf(stderr, "\tnum:%e\n",$1); }
