@@ -1,0 +1,97 @@
+{
+    "multiCommand.commands": [
+        { "command": "multiCommand.f11",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make -C ${workspaceFolder} doxy \u000D"}}]},
+        { "command": "multiCommand.f12",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make -C ${workspaceFolder} cpp \u000D"}}]},
+        { "command": "multiCommand.altx",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make -C ${workspaceFolder} run \u000D"}}]},
+        { "command": "multiCommand.alts",
+            "sequence": [ "workbench.action.files.saveAll",
+                { "command": "workbench.action.terminal.sendSequence",
+                    "args": {"text": "\u000D clear ; LANG=C make -C ${workspaceFolder} format \u000D"}}]},
+    ],
+
+    // files
+    "files.exclude": {
+        "doc/html/**": true,
+    },
+    "files.watcherExclude": {
+        "ref/**": true, "target/**": true,
+    },
+    "files.associations": {
+        "*.mk": "makefile",
+        "*.ini": "flang", "*.f": "flang",
+        "*.ocd": "properties", "*.gdb*": "properties",
+        "*.ld": "linkerscript", "*.ld.fix": "linkerscript",
+        "*.ioc": "properties", "*.config": "properties",
+    },
+
+    // editor
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.rulers": [80],
+    "editor.lineNumbers": "on",
+    "workbench.tree.indent": 24,
+    "editor.fontSize": 14,
+    "explorer.autoReveal": false,
+    "git.enabled": false,
+    "terminal.integrated.copyOnSelection": true,
+
+    // JS
+    "prettier.requireConfig"      :  true,
+    "prettier.configPath"         : ".prettierrc",
+    "json.format.enable"          :  true,
+
+    // clang-format
+    "clang-format.executable"     : "clang-format",
+    "clang-format.fallbackStyle"  : "Google",
+    "clang-format.style"          : "file",
+
+    // C++
+    "[c]": {
+        "editor.defaultFormatter" : "xaver.clang-format",
+        "editor.formatOnSave"     :  false
+    },
+    "[cpp]": {
+        "editor.defaultFormatter" : "xaver.clang-format",
+        "editor.formatOnSave"     :  false
+    },
+    // "C_Cpp.intelliSenseEngine": "Tag Parser",
+    // "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+
+    // CMake
+    "cmake.sourceDirectory" : "${workspaceFolder}",
+    "cmake.buildDirectory"  : "${workspaceFolder}/tmp/${workspaceFolderBasename}",
+    "cmake.generator"       : "Unix Makefiles",
+    "cmake.parallelJobs"    :  4,
+    "cmake.useCMakePresets" : "always",
+    "cmake.buildBeforeRun"  :  true,
+    "cmake.saveBeforeBuild" :  true,
+    "cmake.debugConfig"     : {
+        "cwd" :   "${workspaceFolder}",
+        "args": [ "lib/${workspaceFolderBasename}.ini" ] },
+    "cmake.allowCommentsInPresetsFile" : true,
+    "cmake.ignoreCMakeListsMissing"    : true,
+
+    // MinGW/MSYS2
+    "terminal.integrated.defaultProfile.windows": "UCRT64",
+    "terminal.integrated.profiles.windows": {
+      "UCRT64": {
+        "path": "C:\\msys64\\usr\\bin\\bash.exe",
+        "args": ["--login","-i"],
+        "env": {
+          "MSYSTEM": "UCRT64",
+          "CHERE_INVOKING": "1",
+        }}},
+}
