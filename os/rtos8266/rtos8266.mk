@@ -1,0 +1,2 @@
+GZ  += $(ESP)/ESP8266_RTOS_SDK/README.md
+APT += python3
