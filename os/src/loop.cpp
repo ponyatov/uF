@@ -2,6 +2,6 @@
 #include <stdio.h>
 
 __attribute__((weak)) void loop() {
-    fprintf(stderr, "loop: ok\n");
+    fprintf(stderr, "\nloop: ok\n");
     exit(0);
 }
