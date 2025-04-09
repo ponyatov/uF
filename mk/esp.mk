@@ -15,5 +15,8 @@ $(ESP)/ESP8266_RTOS_SDK/README.md: $(DISTR)/ESP/$(RTOS8266_GZ)
 $(DISTR)/ESP/$(RTOS8266_GZ):
 	$(CURL) $@ $(RTOS8266_URL)/$(RTOS8266_GZ)
 
+.PHONY: esptool
+esptool: $(ESP)/esptool/esptool.py
 $(ESP)/esptool/esptool.py:
 	$(GITREF) https://github.com/espressif/esptool $(dir $@)
+	cd $(dir $<) ; python3 -m venv . ; bin/python3 setup.py install
