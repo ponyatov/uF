@@ -2,6 +2,13 @@
 
 #include <stdio.h>
 
+/// @defgroup prefix prefix
+/// @{
+extern int hex(char *s);  ///< parse 0x
+extern int oct(char *s);  ///< parse 0o
+extern int bin(char *s);  ///< parse 0b
+/// @}
+
 /// @defgroup skelex skelex
 /// @{
 
