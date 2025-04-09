@@ -1,5 +1,5 @@
 %{
-    #include "uF.hpp"
+    #include "cli.hpp"
     char *yyfile = nullptr;
 %}
 

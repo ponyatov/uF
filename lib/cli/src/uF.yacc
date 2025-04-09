@@ -1,5 +1,5 @@
 %{
-    #include "uF.hpp"
+    #include "cli.hpp"
 %}
 
 %defines %union { char c; char *s; int n; }

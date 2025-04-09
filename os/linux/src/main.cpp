@@ -1,5 +1,5 @@
 #include "main.hpp"
-#include "skelex.hpp"
+#include "cli.hpp"
 #include <assert.h>
 
 int main(int argc, char *argv[]) {
