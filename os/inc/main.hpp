@@ -4,6 +4,8 @@
 /// @{
 #ifdef LINUX
 extern int main(int argc, char *argv[]);
+#else
+extern int main();
 #endif  // LINUX
 extern void arg(char argc, char *argv);
 
