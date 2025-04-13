@@ -33,5 +33,12 @@
             "command"        : "git checkout .vscode/settings.json",
             "problemMatcher" : []
         },
+        {
+            "label"          : "uF: Python proto",
+            "type"           : "shell",
+            "command"        : "${workspaceFolder}/src/uF.py ${workspaceFolder}/lib/uF.ini",
+            "presentation"   : {"focus": false},
+            "problemMatcher" : []
+        },
     ]
 }
