@@ -37,7 +37,7 @@
             "label"          : "uF: Python proto",
             "type"           : "shell",
             "command"        : "${workspaceFolder}/src/uF.py ${workspaceFolder}/lib/uF.ini",
-            "presentation"   : {"focus": false},
+            "presentation"   : {"focus": true},
             "problemMatcher" : []
         },
     ]
