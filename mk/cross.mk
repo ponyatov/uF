@@ -1,6 +1,7 @@
 # HW ?= pc
-HW ?= f429disco
+# HW ?= f429disco
 # HW ?= pi800
+HW ?= esp8266
 
 ELF = $(BIN)/$(BINFILE).elf
 DFU = $(BIN)/$(BINFILE).dfu
