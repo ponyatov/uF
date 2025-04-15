@@ -34,11 +34,12 @@
             "problemMatcher" : []
         },
         {
-            "label"          : "uF: Python proto",
+            "label"          : "python: run",
             "type"           : "shell",
-            "command"        : "${workspaceFolder}/src/uF.py ${workspaceFolder}/lib/uF.ini",
-            "presentation"   : {"focus": true},
-            "problemMatcher" : []
+            "command"        : "python3 ${workspaceFolder}/src/${workspaceFolderBasename}.py ${workspaceFolder}/lib/${workspaceFolderBasename}.ini",
+            "problemMatcher" : [],
+            "presentation"   : {"showReuseMessage": true, "focus": true},
+            "group"          : {"kind": "build", "isDefault": true}
         },
     ]
 }

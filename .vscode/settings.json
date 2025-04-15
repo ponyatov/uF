@@ -30,7 +30,6 @@
     },
     "files.associations": {
         "*.mk": "makefile",
-        "*.ini": "flang", "*.f": "flang",
         "*.ocd": "properties", "*.gdb*": "properties",
         "*.ld": "linkerscript", "*.ld.fix": "linkerscript",
         "*.ioc": "properties", "*.config": "properties",
